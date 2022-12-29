@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/main_page_toolbar"
+            layout="@layout/app_bar_layout" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+        <ImageView
+            android:id="@+id/wa_img"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:src="@drawable/wa_logo"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/spartan_bold"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:text="WhatsApp"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/spartan_regular"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:textSize="@dimen/_14sdp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:text="Enter the number you want to chat "
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:fontFamily="@font/spartan_regular"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:textSize="@dimen/_14sdp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:text="with without saving number"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            >
+
+        <EditText
+            android:id="@+id/prefix"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Prefix"
+            android:inputType="number"
+            android:maxLength="2"
+            android:imeOptions="actionNext"
+            android:fontFamily="@font/spartan_regular"
+            android:backgroundTint="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp"
+            android:textColorHint="@color/black"
+            android:textColor="#090909"
+            android:layout_marginEnd="@dimen/_20sdp"
+            />
+
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.EditText"
+            android:gravity="center"
+            android:hint="    Type Number     "
+            android:inputType="number"
+            android:backgroundTint="@color/colorPrimary"
+            android:maxLength="10"
+            android:textColorHint="@color/black"
+            android:textColorLink="@color/colorPrimary"
+            android:imeOptions="actionDone"
+            android:fontFamily="@font/spartan_regular"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#090909"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Btn_Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/btnx"
+        android:fontFamily="@font/spartan_bold"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Click To Chat"
+        android:textColor="#fff"
+        android:textSize="@dimen/_14sdp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_30sdp"
+        >
+        <com.google.android.gms.ads.AdView
+            android:layout_margin="@dimen/_20sdp"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mainAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3591124082809848/2312560341"
+            />
+    </LinearLayout>
+</LinearLayout>
+

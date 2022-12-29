@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">C2C</string>
+    <string name="youtube"><a href="https://youtube.com/channel/UCUc_n0k_CLtDwfMXUcltdAg">Youtube.com/TechCosIncorporated</a></string>
+    <string name="insta"><a href="https://instagram.com/techcos_inc?igshid=YmMyMTA2M2Y=">@TechCos_Inc</a></string>
+    <string name="mail"><a href="TechCosIncorporated@gmail.com">TechCosIncorporated@gmail.com</a></string>
+    <string name="twitter"><a href="https://twitter.com/TechCos_Inc?t=A7_iKHILUwfoZmT7Vfoeiw&amp;s=08">@TechCos_Inc</a></string>
+</resources>
