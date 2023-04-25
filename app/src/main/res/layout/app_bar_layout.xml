@@ -7,5 +7,10 @@
     android:layout_height="wrap_content"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
-
+    <TextView
+        android:id="@+id/titlead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click To Chat"
+        />
 </androidx.appcompat.widget.Toolbar>

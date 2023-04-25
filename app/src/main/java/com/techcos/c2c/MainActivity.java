@@ -1,15 +1,19 @@
 package com.techcos.c2c;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,45 +22,51 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.util.Objects;
 
-
 public class MainActivity extends AppCompatActivity {
-
     Toolbar toolbar;
     EditText prefix,number;
     Button submit;
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.main_page_toolbar);
-        setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(Html.fromHtml("<small>C2C - Click To Chat</small>"));
-        prefix = findViewById(R.id.prefix);
-        number = findViewById(R.id.number);
-        submit = findViewById(R.id.Btn_Submit);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        toolbar = findViewById(R.id.main_page_toolbar);
+        setSupportActionBar(toolbar);
+//        Objects.requireNonNull(getSupportActionBar()).setTitle(Html.fromHtml("<small>C2C - Click To Chat</small>"));
+        prefix = findViewById(R.id.prefix);
+        number = findViewById(R.id.number);
+        submit = findViewById(R.id.Btn_Submit);
+
+
         prefix.setText("91");
-        AdView adview;
-        adview=findViewById(R.id.mainAd);
-
-
-        AdRequest adRequest=new AdRequest.Builder().build();
-        adview.loadAd(adRequest);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +77,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
+
 
 
     @Override
@@ -100,8 +114,10 @@ public class MainActivity extends AppCompatActivity {
         }
         if(item.getItemId()==R.id.main_rateus_option)
         {
-            Toast.makeText(this,"Under Developement!",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+getPackageName())));
         }
         return true;
     }
+
 }
+

@@ -26,12 +26,13 @@
         >
         <ImageView
             android:id="@+id/wa_img"
-            android:layout_width="@dimen/_140sdp"
-            android:layout_height="@dimen/_140sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_80sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:src="@drawable/wa_logo"
             />
         <TextView
+            android:id="@+id/watxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
@@ -44,6 +45,7 @@
 
     </LinearLayout>
     <TextView
+        android:id="@+id/watxt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/spartan_regular"
@@ -62,7 +64,7 @@
         android:fontFamily="@font/spartan_regular"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
-        android:textSize="@dimen/_14sdp"
+        android:textSize="@dimen/_12sdp"
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:text="with without saving number"
@@ -78,7 +80,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
             >
 
         <EditText
@@ -122,7 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:background="@drawable/btnx"
         android:fontFamily="@font/spartan_bold"
@@ -132,22 +134,17 @@
         android:textColor="#fff"
         android:textSize="@dimen/_14sdp" />
     </LinearLayout>
-    <LinearLayout
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/_30sdp"
-        >
-        <com.google.android.gms.ads.AdView
-            android:layout_margin="@dimen/_20sdp"
-            xmlns:ads="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/mainAd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3591124082809848/2312560341"
-            />
-    </LinearLayout>
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8734693330974247/8607641736">
+    </com.google.android.gms.ads.AdView>
+
 </LinearLayout>
 
